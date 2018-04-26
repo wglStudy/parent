@@ -1,0 +1,19 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: eureka-server-8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server-8080:8080/eureka/,http://eureka-server-8081:8081/eureka/
+    register-with-eureka: false #该服务不注册到注册中心中
+    fetch-registry: false #不从注册中心获取注册信息
+  instance:
+    hostname: eureka-server-8082
+    prefer-ip-address: false # 是否将访问地址转换成为ip
+    non-secure-port: 8082
+    instance-id: eureka-server-8082
+
+
+
