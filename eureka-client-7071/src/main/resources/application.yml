@@ -2,7 +2,7 @@ server:
   port: 7071
 spring:
   application:
-    name: eureka-client-7071
+    name: eureka-client-7070
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://10.39.21.4:3306/se-cim?useUnicode=true&characterEncoding=UTF8

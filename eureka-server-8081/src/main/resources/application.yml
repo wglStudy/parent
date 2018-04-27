@@ -14,3 +14,5 @@ eureka:
     instance-id: eureka-server-8081
     non-secure-port: 8081
     prefer-ip-address: false
+  server:
+    enable-self-preservation: false #禁用eureka-server的自我保护机制

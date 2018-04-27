@@ -12,62 +12,134 @@ import java.io.Serializable;
  * @date: 2018/4/22 22:00
  * @Description:
  */
+@SuppressWarnings({"ALL", "AlibabaCommentsMustBeJavadocFormat"})
 @TableName("cim_equip")
 public class Entity extends Model<Entity> {
+
     //设备的标识主键
+    /**
+     * cimId
+     */
     @TableId("cimid")
     private Long cimId;
-    //关联的父容器标识
+    /**
+     * parentCimId
+     */
     @TableField("parent_cimid")
     private Long parentCimId;
-    //跟容器标识
+    /**
+     * cimId
+     */
     @TableField("root_cimid")
     private Long rootCimId;
-    //类型
+    /**
+     * cimType
+     */
     @TableField("cim_type")
     private String cimType;
-    //业务id
+    /**
+     * containerId
+     */
     @TableField("device_id")
     private String containerId;
-    //容器名称
+    /**
+     * containerName
+     */
     @TableField("device_name")
     private String containerName;
+    /**
+     * containerType
+     */
     @TableField("device_type")
     private String containerType;
+    /**
+     * alias
+     */
     @TableField("alias")
     private String alias;
+    /**
+     * description
+     */
     @TableField("description")
     private String description;
+    /**
+     * status
+     */
     @TableField("status")
     private String status;
+    /**
+     * kks
+     */
     @TableField("kks")
     private String kks;
+    /**
+     * cimPath
+     */
     @TableField("cim_path")
     private String cimPath;
+    /**
+     * cuserId
+     */
     @TableField("cuser_id")
     private String cuserId;
+    /**
+     * typeName
+     */
     @TableField(exist = false)
     private String typeName;
+    /**
+     * uuserId
+     */
     @TableField("uuser_id")
     private String uuserId;
+    /**
+     * ctime
+     */
     @TableField("ctime")
     private Long ctime;
+    /**
+     * utime
+     */
     @TableField("utime")
     private Long utime;
+    /**
+     * attr
+     */
     @TableField("attr")
     private String attr;
+    /**
+     * sno
+     */
     @TableField("sno")
     private String sno;
+    /**
+     * icon
+     */
     @TableField("icon")
     private String icon;
+    /**
+     * cimSubType
+     */
     @TableField("cim_sub_type")
     private String cimSubType;
+    /**
+     * lat
+     */
     @TableField("lat")
     private Double lat;
+    /**
+     * lng
+     */
     @TableField("lng")
     private Double lng;
+    /**
+     * protectLevel
+     */
     @TableField("protect_level")
     private String protectLevel;
+    /**
+     * city
+     */
     @TableField(exist = false)
     private String city;
 

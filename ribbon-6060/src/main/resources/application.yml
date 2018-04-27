@@ -1,0 +1,35 @@
+server:
+  port: 6060
+spring:
+  application:
+    name: ribbon-6060
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true  # 开启ribbon的重试机制
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server-8080:8080/eureka/,http://eureka-server-8081:8081/eureka/,http://eureka-server-8082:8082/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+    instance-id: ribbon-6060  # 在信息列表时显示主机名称
+    prefer-ip-address: false # 访问的路径变为IP地址
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisconds: 10000
+ribbon-6060:
+  ribbon:
+    ConnectTimeout: 250 #请求连接的超时时间
+    ReadTimeout: 1000 #请求处理的超时时间
+    OkToRetryOnAllOperations: true #对所有的请求都进行重试
+    MaxAutoRetries: 2 #对于当前实例重试的次数
+    MaxAutoRetriesNextServer: 1 # 切换实例重试的次数
